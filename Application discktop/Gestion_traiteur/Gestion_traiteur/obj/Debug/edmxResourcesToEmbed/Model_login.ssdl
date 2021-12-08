@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Gestion_traiteurModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Traiteur">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Nom_T" Type="varchar" MaxLength="25" />
+    <Property Name="Prenom_T" Type="varchar" MaxLength="25" />
+    <Property Name="Telephone_T" Type="varchar" MaxLength="15" />
+    <Property Name="Adresse_T" Type="varchar" MaxLength="70" />
+    <Property Name="Mdp_T" Type="varchar" MaxLength="50" />
+    <Property Name="admin_" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityContainer Name="Gestion_traiteurModelStoreContainer">
+    <EntitySet Name="Traiteur" EntityType="Self.Traiteur" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

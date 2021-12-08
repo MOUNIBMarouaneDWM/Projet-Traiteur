@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Gestion_traiteurModel1StoreContainer" CdmEntityContainer="Gestion_traiteurEntities1">
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="Gestion_traiteurModel1.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="CIN_C" ColumnName="CIN_C" />
+          <ScalarProperty Name="Nom_C" ColumnName="Nom_C" />
+          <ScalarProperty Name="Prenom_C" ColumnName="Prenom_C" />
+          <ScalarProperty Name="Telephone_C" ColumnName="Telephone_C" />
+          <ScalarProperty Name="Adresse_C" ColumnName="Adresse_C" />
+          <ScalarProperty Name="DateN" ColumnName="DateN" />
+          <ScalarProperty Name="Mdp_C" ColumnName="Mdp_C" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Commandes">
+      <EntityTypeMapping TypeName="Gestion_traiteurModel1.Commande">
+        <MappingFragment StoreEntitySet="Commande">
+          <ScalarProperty Name="Id_cmd" ColumnName="Id_cmd" />
+          <ScalarProperty Name="Repas1" ColumnName="Repas1" />
+          <ScalarProperty Name="Repas2" ColumnName="Repas2" />
+          <ScalarProperty Name="Repas3" ColumnName="Repas3" />
+          <ScalarProperty Name="Date_cmd" ColumnName="Date_cmd" />
+          <ScalarProperty Name="DateD" ColumnName="DateD" />
+          <ScalarProperty Name="Lieu_cmd" ColumnName="Lieu_cmd" />
+          <ScalarProperty Name="Prix_cmd" ColumnName="Prix_cmd" />
+          <ScalarProperty Name="Etat" ColumnName="Etat" />
+          <ScalarProperty Name="client" ColumnName="client" />
+          <ScalarProperty Name="traiteur" ColumnName="traiteur" />
+          <ScalarProperty Name="evenement" ColumnName="evenement" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Etats">
+      <EntityTypeMapping TypeName="Gestion_traiteurModel1.Etat">
+        <MappingFragment StoreEntitySet="Etat">
+          <ScalarProperty Name="Id_Etat" ColumnName="Id_Etat" />
+          <ScalarProperty Name="Etat1" ColumnName="Etat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Evenements">
+      <EntityTypeMapping TypeName="Gestion_traiteurModel1.Evenement">
+        <MappingFragment StoreEntitySet="Evenement">
+          <ScalarProperty Name="Id_Ev" ColumnName="Id_Ev" />
+          <ScalarProperty Name="Nom_Ev" ColumnName="Nom_Ev" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Objets">
+      <EntityTypeMapping TypeName="Gestion_traiteurModel1.Objet">
+        <MappingFragment StoreEntitySet="Objet">
+          <ScalarProperty Name="Id_O" ColumnName="Id_O" />
+          <ScalarProperty Name="Nom_O" ColumnName="Nom_O" />
+          <ScalarProperty Name="Quantite" ColumnName="Quantite" />
+          <ScalarProperty Name="Prix_O" ColumnName="Prix_O" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Repas">
+      <EntityTypeMapping TypeName="Gestion_traiteurModel1.Repa">
+        <MappingFragment StoreEntitySet="Repas">
+          <ScalarProperty Name="Id_R" ColumnName="Id_R" />
+          <ScalarProperty Name="Nom_R" ColumnName="Nom_R" />
+          <ScalarProperty Name="Prix_R" ColumnName="Prix_R" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reservers">
+      <EntityTypeMapping TypeName="Gestion_traiteurModel1.Reserver">
+        <MappingFragment StoreEntitySet="Reserver">
+          <ScalarProperty Name="id_O" ColumnName="id_O" />
+          <ScalarProperty Name="id_cmd" ColumnName="id_cmd" />
+          <ScalarProperty Name="Nbr" ColumnName="Nbr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Traiteurs">
+      <EntityTypeMapping TypeName="Gestion_traiteurModel1.Traiteur">
+        <MappingFragment StoreEntitySet="Traiteur">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom_T" ColumnName="Nom_T" />
+          <ScalarProperty Name="Prenom_T" ColumnName="Prenom_T" />
+          <ScalarProperty Name="Telephone_T" ColumnName="Telephone_T" />
+          <ScalarProperty Name="Adresse_T" ColumnName="Adresse_T" />
+          <ScalarProperty Name="Mdp_T" ColumnName="Mdp_T" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

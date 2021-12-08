@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="916d52a77c9e4a4186a83cae66cf2b70" Name="Diagram1">
+        <EntityTypeShape EntityType="GestionTraiteurModel.Client" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionTraiteurModel.Commande" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionTraiteurModel.Etat" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionTraiteurModel.Evenement" Width="1.5" PointX="0.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionTraiteurModel.Objet" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionTraiteurModel.Repas" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionTraiteurModel.Reserver" Width="1.5" PointX="5.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionTraiteurModel.Traiteur" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="GestionTraiteurModel.FK__Commande__client__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionTraiteurModel.FK__Commande__Etat__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionTraiteurModel.FK__Commande__evenem__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionTraiteurModel.FK__Commande__Repas1__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionTraiteurModel.FK__Commande__Repas2__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionTraiteurModel.FK__Commande__Repas3__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionTraiteurModel.FK__Reserver__id_cmd__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionTraiteurModel.FK__Reserver__id_O__6383C8BA" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

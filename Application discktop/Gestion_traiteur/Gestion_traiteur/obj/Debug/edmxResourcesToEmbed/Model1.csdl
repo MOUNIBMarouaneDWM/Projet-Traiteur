@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GestionTraiteurModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="CIN_C" />
+    </Key>
+    <Property Name="CIN_C" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nom_C" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Prenom_C" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Telephone_C" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Adresse_C" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="DateN" Type="DateTime" Precision="0" />
+    <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mdp_C" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Commande" Relationship="Self.FK__Commande__client__5535A963" FromRole="Client" ToRole="Commande" />
+  </EntityType>
+  <EntityType Name="Commande">
+    <Key>
+      <PropertyRef Name="Id_cmd" />
+    </Key>
+    <Property Name="Id_cmd" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Repas1" Type="Int32" />
+    <Property Name="Repas2" Type="Int32" />
+    <Property Name="Repas3" Type="Int32" />
+    <Property Name="qtR1" Type="Int32" />
+    <Property Name="qtR2" Type="Int32" />
+    <Property Name="qtR3" Type="Int32" />
+    <Property Name="Date_cmd" Type="DateTime" Precision="3" />
+    <Property Name="DateD" Type="DateTime" Precision="3" />
+    <Property Name="Lieu_cmd" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="Prix_cmd" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Etat" Type="Int32" />
+    <Property Name="client" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="evenement" Type="Int32" />
+    <Property Name="payer" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="Client1" Relationship="Self.FK__Commande__client__5535A963" FromRole="Commande" ToRole="Client" />
+    <NavigationProperty Name="Etat1" Relationship="Self.FK__Commande__Etat__534D60F1" FromRole="Commande" ToRole="Etat" />
+    <NavigationProperty Name="Evenement1" Relationship="Self.FK__Commande__evenem__5629CD9C" FromRole="Commande" ToRole="Evenement" />
+    <NavigationProperty Name="Repas" Relationship="Self.FK__Commande__Repas1__49C3F6B7" FromRole="Commande" ToRole="Repas" />
+    <NavigationProperty Name="Repas4" Relationship="Self.FK__Commande__Repas2__4BAC3F29" FromRole="Commande" ToRole="Repas" />
+    <NavigationProperty Name="Repas5" Relationship="Self.FK__Commande__Repas3__4D94879B" FromRole="Commande" ToRole="Repas" />
+    <NavigationProperty Name="Reserver" Relationship="Self.FK__Reserver__id_cmd__628FA481" FromRole="Commande" ToRole="Reserver" />
+  </EntityType>
+  <EntityType Name="Etat">
+    <Key>
+      <PropertyRef Name="Id_Etat" />
+    </Key>
+    <Property Name="Id_Etat" Type="Int32" Nullable="false" />
+    <Property Name="Etat1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Commande" Relationship="Self.FK__Commande__Etat__534D60F1" FromRole="Etat" ToRole="Commande" />
+  </EntityType>
+  <EntityType Name="Evenement">
+    <Key>
+      <PropertyRef Name="Id_Ev" />
+    </Key>
+    <Property Name="Id_Ev" Type="Int32" Nullable="false" />
+    <Property Name="Nom_Ev" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Commande" Relationship="Self.FK__Commande__evenem__5629CD9C" FromRole="Evenement" ToRole="Commande" />
+  </EntityType>
+  <EntityType Name="Objet">
+    <Key>
+      <PropertyRef Name="Id_O" />
+    </Key>
+    <Property Name="Id_O" Type="Int32" Nullable="false" />
+    <Property Name="Nom_O" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Quantite" Type="Int32" />
+    <Property Name="Prix_O" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="Reserver" Relationship="Self.FK__Reserver__id_O__6383C8BA" FromRole="Objet" ToRole="Reserver" />
+  </EntityType>
+  <EntityType Name="Repas">
+    <Key>
+      <PropertyRef Name="Id_R" />
+    </Key>
+    <Property Name="Id_R" Type="Int32" Nullable="false" />
+    <Property Name="Nom_R" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Prix_R" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="Commande" Relationship="Self.FK__Commande__Repas1__49C3F6B7" FromRole="Repas" ToRole="Commande" />
+    <NavigationProperty Name="Commande1" Relationship="Self.FK__Commande__Repas2__4BAC3F29" FromRole="Repas" ToRole="Commande" />
+    <NavigationProperty Name="Commande2" Relationship="Self.FK__Commande__Repas3__4D94879B" FromRole="Repas" ToRole="Commande" />
+  </EntityType>
+  <EntityType Name="Reserver">
+    <Key>
+      <PropertyRef Name="id_cmd" />
+      <PropertyRef Name="id_O" />
+    </Key>
+    <Property Name="id_cmd" Type="Int32" Nullable="false" />
+    <Property Name="id_O" Type="Int32" Nullable="false" />
+    <Property Name="Nbr" Type="Int32" />
+    <NavigationProperty Name="Commande" Relationship="Self.FK__Reserver__id_cmd__628FA481" FromRole="Reserver" ToRole="Commande" />
+    <NavigationProperty Name="Objet" Relationship="Self.FK__Reserver__id_O__6383C8BA" FromRole="Reserver" ToRole="Objet" />
+  </EntityType>
+  <EntityType Name="Traiteur">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="admin_" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mdp_T" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK__Commande__client__5535A963">
+    <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+    <End Role="Commande" Type="Self.Commande" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="CIN_C" />
+      </Principal>
+      <Dependent Role="Commande">
+        <PropertyRef Name="client" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Commande__Etat__534D60F1">
+    <End Role="Etat" Type="Self.Etat" Multiplicity="0..1" />
+    <End Role="Commande" Type="Self.Commande" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Etat">
+        <PropertyRef Name="Id_Etat" />
+      </Principal>
+      <Dependent Role="Commande">
+        <PropertyRef Name="Etat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Commande__evenem__5629CD9C">
+    <End Role="Evenement" Type="Self.Evenement" Multiplicity="0..1" />
+    <End Role="Commande" Type="Self.Commande" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Evenement">
+        <PropertyRef Name="Id_Ev" />
+      </Principal>
+      <Dependent Role="Commande">
+        <PropertyRef Name="evenement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Commande__Repas1__49C3F6B7">
+    <End Role="Repas" Type="Self.Repas" Multiplicity="0..1" />
+    <End Role="Commande" Type="Self.Commande" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Repas">
+        <PropertyRef Name="Id_R" />
+      </Principal>
+      <Dependent Role="Commande">
+        <PropertyRef Name="Repas1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Commande__Repas2__4BAC3F29">
+    <End Role="Repas" Type="Self.Repas" Multiplicity="0..1" />
+    <End Role="Commande" Type="Self.Commande" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Repas">
+        <PropertyRef Name="Id_R" />
+      </Principal>
+      <Dependent Role="Commande">
+        <PropertyRef Name="Repas2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Commande__Repas3__4D94879B">
+    <End Role="Repas" Type="Self.Repas" Multiplicity="0..1" />
+    <End Role="Commande" Type="Self.Commande" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Repas">
+        <PropertyRef Name="Id_R" />
+      </Principal>
+      <Dependent Role="Commande">
+        <PropertyRef Name="Repas3" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reserver__id_cmd__628FA481">
+    <End Role="Commande" Type="Self.Commande" Multiplicity="1" />
+    <End Role="Reserver" Type="Self.Reserver" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Commande">
+        <PropertyRef Name="Id_cmd" />
+      </Principal>
+      <Dependent Role="Reserver">
+        <PropertyRef Name="id_cmd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reserver__id_O__6383C8BA">
+    <End Role="Objet" Type="Self.Objet" Multiplicity="1" />
+    <End Role="Reserver" Type="Self.Reserver" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Objet">
+        <PropertyRef Name="Id_O" />
+      </Principal>
+      <Dependent Role="Reserver">
+        <PropertyRef Name="id_O" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Gestion_TraiteurEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Client" EntityType="Self.Client" />
+    <EntitySet Name="Commande" EntityType="Self.Commande" />
+    <EntitySet Name="Etat" EntityType="Self.Etat" />
+    <EntitySet Name="Evenement" EntityType="Self.Evenement" />
+    <EntitySet Name="Objet" EntityType="Self.Objet" />
+    <EntitySet Name="Repas" EntityType="Self.Repas" />
+    <EntitySet Name="Reserver" EntityType="Self.Reserver" />
+    <EntitySet Name="Traiteur" EntityType="Self.Traiteur" />
+    <AssociationSet Name="FK__Commande__client__5535A963" Association="Self.FK__Commande__client__5535A963">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Commande" EntitySet="Commande" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Commande__Etat__534D60F1" Association="Self.FK__Commande__Etat__534D60F1">
+      <End Role="Etat" EntitySet="Etat" />
+      <End Role="Commande" EntitySet="Commande" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Commande__evenem__5629CD9C" Association="Self.FK__Commande__evenem__5629CD9C">
+      <End Role="Evenement" EntitySet="Evenement" />
+      <End Role="Commande" EntitySet="Commande" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Commande__Repas1__49C3F6B7" Association="Self.FK__Commande__Repas1__49C3F6B7">
+      <End Role="Repas" EntitySet="Repas" />
+      <End Role="Commande" EntitySet="Commande" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Commande__Repas2__4BAC3F29" Association="Self.FK__Commande__Repas2__4BAC3F29">
+      <End Role="Repas" EntitySet="Repas" />
+      <End Role="Commande" EntitySet="Commande" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Commande__Repas3__4D94879B" Association="Self.FK__Commande__Repas3__4D94879B">
+      <End Role="Repas" EntitySet="Repas" />
+      <End Role="Commande" EntitySet="Commande" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reserver__id_cmd__628FA481" Association="Self.FK__Reserver__id_cmd__628FA481">
+      <End Role="Commande" EntitySet="Commande" />
+      <End Role="Reserver" EntitySet="Reserver" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reserver__id_O__6383C8BA" Association="Self.FK__Reserver__id_O__6383C8BA">
+      <End Role="Objet" EntitySet="Objet" />
+      <End Role="Reserver" EntitySet="Reserver" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

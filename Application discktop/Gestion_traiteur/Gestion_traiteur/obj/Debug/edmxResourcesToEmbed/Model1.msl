@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GestionTraiteurModelStoreContainer" CdmEntityContainer="Gestion_TraiteurEntities">
+    <EntitySetMapping Name="Client">
+      <EntityTypeMapping TypeName="GestionTraiteurModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="CIN_C" ColumnName="CIN_C" />
+          <ScalarProperty Name="Nom_C" ColumnName="Nom_C" />
+          <ScalarProperty Name="Prenom_C" ColumnName="Prenom_C" />
+          <ScalarProperty Name="Telephone_C" ColumnName="Telephone_C" />
+          <ScalarProperty Name="Adresse_C" ColumnName="Adresse_C" />
+          <ScalarProperty Name="DateN" ColumnName="DateN" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="Mdp_C" ColumnName="Mdp_C" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Commande">
+      <EntityTypeMapping TypeName="GestionTraiteurModel.Commande">
+        <MappingFragment StoreEntitySet="Commande">
+          <ScalarProperty Name="Id_cmd" ColumnName="Id_cmd" />
+          <ScalarProperty Name="Repas1" ColumnName="Repas1" />
+          <ScalarProperty Name="Repas2" ColumnName="Repas2" />
+          <ScalarProperty Name="Repas3" ColumnName="Repas3" />
+          <ScalarProperty Name="qtR1" ColumnName="qtR1" />
+          <ScalarProperty Name="qtR2" ColumnName="qtR2" />
+          <ScalarProperty Name="qtR3" ColumnName="qtR3" />
+          <ScalarProperty Name="Date_cmd" ColumnName="Date_cmd" />
+          <ScalarProperty Name="DateD" ColumnName="DateD" />
+          <ScalarProperty Name="Lieu_cmd" ColumnName="Lieu_cmd" />
+          <ScalarProperty Name="Prix_cmd" ColumnName="Prix_cmd" />
+          <ScalarProperty Name="Etat" ColumnName="Etat" />
+          <ScalarProperty Name="client" ColumnName="client" />
+          <ScalarProperty Name="evenement" ColumnName="evenement" />
+          <ScalarProperty Name="payer" ColumnName="payer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Etat">
+      <EntityTypeMapping TypeName="GestionTraiteurModel.Etat">
+        <MappingFragment StoreEntitySet="Etat">
+          <ScalarProperty Name="Id_Etat" ColumnName="Id_Etat" />
+          <ScalarProperty Name="Etat1" ColumnName="Etat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Evenement">
+      <EntityTypeMapping TypeName="GestionTraiteurModel.Evenement">
+        <MappingFragment StoreEntitySet="Evenement">
+          <ScalarProperty Name="Id_Ev" ColumnName="Id_Ev" />
+          <ScalarProperty Name="Nom_Ev" ColumnName="Nom_Ev" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Objet">
+      <EntityTypeMapping TypeName="GestionTraiteurModel.Objet">
+        <MappingFragment StoreEntitySet="Objet">
+          <ScalarProperty Name="Id_O" ColumnName="Id_O" />
+          <ScalarProperty Name="Nom_O" ColumnName="Nom_O" />
+          <ScalarProperty Name="Quantite" ColumnName="Quantite" />
+          <ScalarProperty Name="Prix_O" ColumnName="Prix_O" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Repas">
+      <EntityTypeMapping TypeName="GestionTraiteurModel.Repas">
+        <MappingFragment StoreEntitySet="Repas">
+          <ScalarProperty Name="Id_R" ColumnName="Id_R" />
+          <ScalarProperty Name="Nom_R" ColumnName="Nom_R" />
+          <ScalarProperty Name="Prix_R" ColumnName="Prix_R" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reserver">
+      <EntityTypeMapping TypeName="GestionTraiteurModel.Reserver">
+        <MappingFragment StoreEntitySet="Reserver">
+          <ScalarProperty Name="id_cmd" ColumnName="id_cmd" />
+          <ScalarProperty Name="id_O" ColumnName="id_O" />
+          <ScalarProperty Name="Nbr" ColumnName="Nbr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Traiteur">
+      <EntityTypeMapping TypeName="GestionTraiteurModel.Traiteur">
+        <MappingFragment StoreEntitySet="Traiteur">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="admin_" ColumnName="admin_" />
+          <ScalarProperty Name="Mdp_T" ColumnName="Mdp_T" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

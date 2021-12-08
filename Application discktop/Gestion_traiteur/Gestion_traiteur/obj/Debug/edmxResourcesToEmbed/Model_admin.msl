@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Gestion_traiteurModelStoreContainer" CdmEntityContainer="Gestion_traiteurEntities3">
+    <EntitySetMapping Name="Traiteur">
+      <EntityTypeMapping TypeName="Gestion_traiteurModel.Traiteur">
+        <MappingFragment StoreEntitySet="Traiteur">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom_T" ColumnName="Nom_T" />
+          <ScalarProperty Name="Prenom_T" ColumnName="Prenom_T" />
+          <ScalarProperty Name="Telephone_T" ColumnName="Telephone_T" />
+          <ScalarProperty Name="Adresse_T" ColumnName="Adresse_T" />
+          <ScalarProperty Name="Mdp_T" ColumnName="Mdp_T" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
